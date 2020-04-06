@@ -72,7 +72,7 @@ define Package/subconverter/install
 	$(INSTALL_DIR) $(1)/usr/sbin/subconverter
 	$(INSTALL_BIN) $(BUILD_DIR)/${PKG_SOURCE_SUBDIR}/subconverter $(1)/usr/sbin/subconverter
 	$(CP) $(BUILD_DIR)/${PKG_SOURCE_SUBDIR}/base/* $(1)/usr/sbin/subconverter
-	sed -i 's/^\(.*TW.*\)🇨🇳$/\1🇹🇼/' $(1)/usr/sbin/subconverter/snippets/emoji.txt
+	./files/emoji-fix.sh $(1)/usr/sbin/subconverter/snippets/emoji.txt
 endef
 
 
