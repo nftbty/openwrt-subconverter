@@ -6,14 +6,14 @@ SERVICE_DAEMONIZE=1
 
 start() {
 	logger -t Subconverter 'Starting Subconverter service'
-	service_start /usr/sbin/subconverter/subconverter
+	service_start /usr/bin/subconverter/subconverter
 	return 0
 }
 
 stop() {
 	if [ -n "`pidof subconverter`" ]; then
 		logger -t Subconverter 'Shutting down Subconverter service'
-		service_stop /usr/sbin/subconverter/subconverter
+		service_stop /usr/bin/subconverter/subconverter
 	fi
 	return 0
 }
@@ -21,6 +21,6 @@ stop() {
 restart() {
 	logger -t Subconverter 'Restarting Subconverter service'
 	stop
-	sleep 2
+	sleep 1
 	start
 }
