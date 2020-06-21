@@ -69,10 +69,10 @@ endef
 define Package/subconverter/install
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) ./files/subconverter.init $(1)/etc/init.d/subconverter
-	$(INSTALL_DIR) $(1)/usr/sbin/subconverter
-	$(INSTALL_BIN) $(BUILD_DIR)/${PKG_SOURCE_SUBDIR}/subconverter $(1)/usr/sbin/subconverter
-	$(CP) $(BUILD_DIR)/${PKG_SOURCE_SUBDIR}/base/* $(1)/usr/sbin/subconverter
-	./files/emoji-fix.sh $(1)/usr/sbin/subconverter/snippets/emoji.txt
+	$(INSTALL_DIR) $(1)/usr/bin/subconverter
+	$(INSTALL_BIN) $(BUILD_DIR)/${PKG_SOURCE_SUBDIR}/subconverter $(1)/usr/bin/subconverter
+	$(CP) $(BUILD_DIR)/${PKG_SOURCE_SUBDIR}/base/* $(1)/usr/bin/subconverter
+	./files/emoji-fix.sh $(1)/usr/bin/subconverter/snippets/emoji.txt
 endef
 
 
